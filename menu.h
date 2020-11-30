@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "civilizacion.h"
+#include "videogame.h"
 
 #ifdef _WIN32
 #define CLEAN_SCREEN "cls"
@@ -14,9 +15,40 @@
 
 /* Opciones Menu */
 enum {
-    AGREGAR_CIVILIZACION = 1,
-    ELEGIR_CIVILIZACION,
+    NOMBRE_USUARIO = 1,
+    AGREGAR,
+    INSERTAR,
+    INICIALIZAR,
+    PRIMERA,
+    ULTIMA,
+    ORDENAR,
+    ELIMINAR,
+    BUSCAR,
+    MODIFICAR,
+    MOSTRAR,
+    RESPALDAR,
+    RECUPERAR,
     SALIR
+};
+
+/* Opciones Sub-Menu -> Ordenar Civilizacion */
+
+enum {
+    ORDENAR_NOMBRE = 1,
+    ORDENAR_X,
+    ORDENAR_Y,
+    ORDENAR_PUNTUACION,
+    ORDENAR_REGRESAR
+};
+
+/* Opciones Sub-Menu -> Modificar Civilizacion */
+
+enum {
+    MODIFICAR_NOMBRE = 1,
+    MODIFICAR_X,
+    MODIFICAR_Y,
+    MODIFICAR_PUNTUACION,
+    MODIFICAR_REGRESAR
 };
 
 /* Opciones Sub-Menu -> Elegir Civilizacion */
@@ -52,17 +84,19 @@ enum {
 
 /* Opciones Sub-Menu -> Modificar */
 enum {
-    MODIFICAR_NOMBRE = 1,
-    MODIFICAR_EDAD,
-    MODIFICAR_SALUD
+    MODIFICAR_ALDEANO_NOMBRE = 1,
+    MODIFICAR_ALDEANO_EDAD,
+    MODIFICAR_ALDEANO_SALUD
 };
 
 class Menu {
 private:
+    Videogame v;
     vector<Civilizacion> civilizaciones; // creamos la lista de vectores
     Civilizacion c; // creamos el objeto como aux
     Aldeano a; // creamos el objeto como aux
     size_t opc; // opcion menu
+    string nombreUsuario; // variable para nombre de usuario -> civilizacion
     bool continuarMenu; // bandera para continuar con el menu
 
     /* Metodos privados */
@@ -71,7 +105,7 @@ private:
 
 public:
     Menu(); // constructor
-    void correr(); // función del menu principal
+    void correr(); // funciï¿½n del menu principal
 
 };
 
