@@ -15,9 +15,6 @@ public:
     void agregarCivilizacion(const Civilizacion &c); // sobrecarga
 
     void mostrar();
-    void respaldar_tabla();
-    void respaldar();
-    void recuperar();
 
     void insertar(const Civilizacion &c, size_t pos);
     size_t size();

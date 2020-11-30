@@ -26,8 +26,6 @@ enum {
     BUSCAR,
     MODIFICAR,
     MOSTRAR,
-    RESPALDAR,
-    RECUPERAR,
     SALIR
 };
 
